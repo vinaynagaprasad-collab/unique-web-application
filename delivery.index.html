@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Petrol Delivery</title>
+</head>
+<body style="font-family:sans-serif; max-width:400px; margin:auto; padding:20px;">
+
+  <h2>Request Petrol</h2>
+
+  <form onsubmit="sendRequest(event)">
+    <input id="name" placeholder="Your Name" required><br><br>
+    <input id="location" placeholder="Location" required><br><br>
+    <select id="vehicle" required>
+      <option value="">Vehicle Type</option>
+      <option>Car</option>
+      <option>Bike</option>
+      <option>Truck</option>
+    </select><br><br>
+    <input id="litres" type="number" placeholder="Litres Needed" required><br><br>
+    <button>Send Request</button>
+  </form>
+
+  <p id="msg" style="background:#d4edda; color:#155724; padding:10px; display:none;"></p>
+
+  <script>
+    function sendRequest(e) {
+      e.preventDefault();
+      let name = name.value, loc = location.value, veh = vehicle.value, lit = litres.value;
+      msg.innerHTML = `Request sent!<br>${name}, ${veh}, ${lit}L at ${loc}`;
+      msg.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
